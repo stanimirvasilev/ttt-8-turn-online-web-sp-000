@@ -2,11 +2,22 @@ def turn (board)
   puts "Please enter 1-9:"
   user_input = gets.strip
   index = input_to_index(user_input)
+<<<<<<< HEAD
   if valid_move?(board, index)
     move(board, index, player = "X")
     display_board(board)
   else 
     turn(board)
+=======
+  if index.between?(0, 8) 
+    move(board, index, player = "X")
+    display_board(board)
+  elsif index.between?(0, 8) == false
+    turn(board)
+    elsif valid_move?(board, 0) 
+
+  
+>>>>>>> 15afd4bcfe4919ca72a6ab246c0a0080e9dc733d
   end
 end
 
@@ -37,7 +48,11 @@ end
   end
   
   def valid_move?(board, index) 
+<<<<<<< HEAD
   if position_taken?(board, index) && index.between?(0, 8) 
+=======
+  if position_taken?(board, index)  == true && index.between?(0, 8) == false
+>>>>>>> 15afd4bcfe4919ca72a6ab246c0a0080e9dc733d
     return false
 elsif position_taken?(board, index)  == false && index.between?(0, 8) == true
  return true
